@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quynh Vy's Portfolio Website</title>
+    <link rel="icon" href="Chococat.webp" type="image/webp">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Centering the body content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300vh;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+            background: linear-gradient(to bottom, rgb(226, 213, 139), rgb(43, 20, 19)); /* Black gradient at the bottom */
+            position: relative;
+            overflow: show;
+            transform: translateY(-31.5%); /* Moves everything 10% higher up */
+            font-family:Arial, Helvetica, sans-serif
+
+        }
+        section.home {
+    margin-bottom: 30px;
+}
+
+section {
+    margin-top: 100px; /* Adds space above the 'about me' section */
+}
+
+
+        /* Stars (dots) */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0.7;
+            animation: starAnimation 120s linear infinite;
+        }
+
+        @keyframes starAnimation {
+            0% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0.4;
+            }
+        }
+
+        /* Center content styles */
+        .name {
+            color: rgb(148, 90, 57);
+        }
+
+        .social-link {
+            margin-right: 15px;
+            font-size: 30px;
+            text-decoration: none;
+            color: #f8f8f8;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .social-link:hover {
+            color: #d39379;
+        }
+
+        .social-link.instagram:hover {
+            color: #d39379;
+        }
+        /* Social link hover effect (dilating the icons) */
+        .social-link:hover {
+            color: #d39379;
+        }
+
+        .icon-and-circle {
+            position: relative;
+            display: inline-block;
+            transition: transform 0.5s ease;
+        }
+
+        /* Circle hover effect (dilating both the icon and the circle) */
+        .social-link:hover .icon-and-circle {
+            transform: scale(1.2); /* Dilates both the icon and the circle */
+        }
+
+       /* Circle styles */
+.circle-github, .circle-instagram {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -7px;
+    left: 49.2%;
+    transform: translateX(-50%);
+    z-index: -1;
+    display: flex;
+    justify-content: center;  /* Centers the icon horizontally */
+    align-items: center;      /* Centers the icon vertically */
+}
+
+.circle-github {
+    background-color: #573c31;
+}
+
+.circle-instagram {
+    background-color: #573c31;
+}
+
+        header {
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgb(184, 179, 179);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #f1eded;
+            transition: color 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Ease-in-out with custom timing */
+        }
+
+        nav a.active {
+            font-weight: bold;
+            color:rgb(194, 129, 92)
+        }
+
+        .nav-oval-bar {
+            width: 30%;
+            height: 50px;
+            background-color: hsla(0, 52%, 8%, 0.6);
+            border-radius: 50px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        /* Initially hide the slider */
+        .slider {
+            position: absolute;
+            bottom: -5px;
+            height: 2px;
+            background-color: rgba(43, 5, 5, 0.6);
+            width: 0;
+            transition: width 0.3s, left 0.3s;
+            z-index: -1;
+            visibility: hidden; /* Hide by default */
+        }
+
+        /* When there's an active link, make the slider visible */
+        nav a.active ~ .slider {
+            visibility: visible;
+        }
+
+        section.home {
+            margin-top: 20px;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 10px;
+            border: 6px solid white; /* Adding white border */
+        }
+
+        .home, nav {
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-container {
+            position: relative;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars background -->
+    <div class="stars"></div>
+
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <a href="#" class="active">home</a>
+            <a href="#">about me</a>
+            <a href="#">skills</a>
+            <a href="#">extracurriculars</a>
+            <a href="#">achievement</a>
+            <a href="#">contacts</a>
+        </nav>
+        <div class="slider"></div>
+        <div class="nav-oval-bar"></div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="home">
+        <div>
+            <h2><span style="color: rgb(34, 23, 23);">Hi, I'm</span> <span class="name">Quynh-Vy Trinh Vu</span>.</h2>
+            <img src="main.jpg" alt="A picture of me">
+            <p style="color: rgb(34, 23, 23);; font-weight: bold;">I am interest in the STEM field.</p>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <div class="social-container">
+                    <a href="https://github.com/crossterday" target="_blank" class="social-link">
+                        <div class="icon-and-circle">
+                            <i class="fab fa-github"></i>
+                            <div class="circle-github"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="social-container">
+                    <a href="https://www.instagram.com/crossterday" target="_blank" class="social-link instagram">
+                        <div class="icon-and-circle">
+                            <i class="fab fa-instagram"></i>
+                            <div class="circle-instagram"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- About Me Section-->
+<section>
+    <img src="id.png" alt="ID Image" style="width: 50px; height: 50px; margin-bottom: -3px; border: none;">
+    <h1 style="font-weight: bold; color: rgb(34, 23, 23);">About Me</h1>
+    <div style="width: 700px; height: 200px; background-color: rgba(156, 136, 99, 0.8); border-radius: 10px; border: 2px solid #dfdada; position: relative; box-shadow: 5px 5px 15px rgba(24, 9, 9, 0.3);">
+        <!-- Text inside the div taking space -->
+        <p style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; padding: 20px; box-sizing: border-box; font-weight: bold; color:rgb(37, 24, 24)">
+            I am an accelerated 8th grader at <span style="color: rgb(133, 69, 69); font-weight: bold;">Shirley C. Heim Middle School</span> taking Algebra 1. I've been intrigued by technology for two years now yet I haven't took action on that interest. Now, I've decided to start working on some coding projects.
+            <br><br>
+            Not only am I interested in the STEM field, I also have interests for <span style="color: rgb(133, 69, 69); font-weight: bold;">art</span>, creative writing, playing guitar, singing, playing video games, watching anime, reading, and <span style="color: rgb(133, 69, 69); font-weight: bold;">collecting Pokémon cards</span>.
+        </p>
+    </div>
+</section>
+
+
+
+    
+    <!-- JavaScript for Stars and Slider -->
+    <script>
+        const starsContainer = document.querySelector('.stars');
+
+        function createStar() {
+    const star = document.createElement('div');
+    star.classList.add('star');
+
+    // Randomize star size
+    const size = Math.random() * 3 + 1; // Size between 1px and 4px
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+
+    // Randomize position
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    star.style.left = `${x}px`;
+    star.style.top = `${y}px`;
+
+    // Randomize animation duration and delay
+    const duration = Math.random() * 80 + 40; // Duration between 40s and 120s
+    const delay = Math.random() * 10; // Delay between 0s and 10s
+    star.style.animationDuration = `${duration}s`;
+    star.style.animationDelay = `${delay}s`;
+
+    starsContainer.appendChild(star);
+}
+
+
+        for (let i = 0; i < 100; i++) {
+            createStar();
+        }
+
+        // Slider bar functionality
+        const navLinks = document.querySelectorAll('nav a');
+        const slider = document.querySelector('.slider');
+
+        // Function to update the slider position for the active link
+        function updateSliderPosition(link) {
+            const rect = link.getBoundingClientRect();
+            slider.style.width = `${rect.width}px`;
+            slider.style.left = `${rect.left}px`;
+            slider.style.visibility = 'visible'; // Show the slider when updating position
+        }
+
+        // Set initial slider position based on active link
+        const activeLink = document.querySelector('nav a.active');
+        if (activeLink) {
+            updateSliderPosition(activeLink);
+        } else {
+            slider.style.visibility = 'hidden'; // Hide slider if no active link
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Remove active class from all links
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                // Add active class to the clicked link
+                link.classList.add('active');
+                // Update the slider position for the active link
+                updateSliderPosition(link);
+            });
+        });
+    </script>
+</body>
+</html>
