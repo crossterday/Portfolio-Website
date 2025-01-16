@@ -9,23 +9,28 @@
     <link rel="stylesheet" type="text/css" href="style.css">
      
 </head>
-<body>
+<body>    
+</body>
+</html>
+
+    
     <!-- Stars background -->
     <div class="stars"></div>
 
     <!-- Header and Navigation -->
     <header>
-        <nav class="sticky">
+        <nav>
             <a href="#" class="active">home</a>
             <a href="#">about me</a>
             <a href="#">skills</a>
             <a href="#">extracurriculars</a>
-            <a href="#">achievement</a>
+            <a href="#">achievements</a>
             <a href="#">contacts</a>
         </nav>
         <div class="slider"></div>
         <div class="nav-oval-bar"></div>
     </header>
+    
 
 
     <!-- Main Content -->
@@ -71,72 +76,66 @@
     </div>
 </section>
 
+<!-- Skills Section -->
+<style>
+    /* Apply transition effect on container */
+    .skill-item {
+        position: relative;
+        overflow: hidden; /* Prevents any overflow from the scale effect */
+        transition: transform 0.5s ease-in-out; /* Smooth transition */
+    }
 
+    /* Scaling effect */
+    .skill-item:hover {
+        transform: scale(1.05); /* Slight scale */
+        transform-origin: center; /* Scaling from the center */
+    }
 
-    
-    <!-- JavaScript for Stars and Slider -->
-    <script>
-        const starsContainer = document.querySelector('.stars');
+    /* Prevent the text from being affected */
+    .skill-item h3, .skill-item p {
+        position: relative; /* Ensures the text stays on top of the container */
+        z-index: 1; /* Keep text above the scaled background */
+    }
 
-        function createStar() {
-    const star = document.createElement('div');
-    star.classList.add('star');
+    /* Fix height and padding */
+    .skill-item {
+        height: 300px;
+        padding: 10px;
+    }
+</style>
 
-    // Randomize star size
-    const size = Math.random() * 3 + 1; // Size between 1px and 4px
-    star.style.width = `${size}px`;
-    star.style.height = `${size}px`;
-
-    // Randomize position
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight;
-    star.style.left = `${x}px`;
-    star.style.top = `${y}px`;
-
-    // Randomize animation duration and delay
-    const duration = Math.random() * 80 + 40; // Duration between 40s and 120s
-    const delay = Math.random() * 10; // Delay between 0s and 10s
-    star.style.animationDuration = `${duration}s`;
-    star.style.animationDelay = `${delay}s`;
-
-    starsContainer.appendChild(star);
-}
-
-
-        for (let i = 0; i < 100; i++) {
-            createStar();
-        }
-
-        // Slider bar functionality
-        const navLinks = document.querySelectorAll('nav a');
-        const slider = document.querySelector('.slider');
-
-        // Function to update the slider position for the active link
-        function updateSliderPosition(link) {
-            const rect = link.getBoundingClientRect();
-            slider.style.width = `${rect.width}px`;
-            slider.style.left = `${rect.left}px`;
-            slider.style.visibility = 'visible'; // Show the slider when updating position
-        }
-
-        // Set initial slider position based on active link
-        const activeLink = document.querySelector('nav a.active');
-        if (activeLink) {
-            updateSliderPosition(activeLink);
-        } else {
-            slider.style.visibility = 'hidden'; // Hide slider if no active link
-        }
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                // Remove active class from all links
-                navLinks.forEach(nav => nav.classList.remove('active'));
-                // Add active class to the clicked link
-                link.classList.add('active');
-                // Update the slider position for the active link
-                updateSliderPosition(link);
-            });
-        });
-    </script>
-</body>
-</html>
+<!-- Skills Section -->
+<section>
+    <img src="cogwheels.png" alt="Skills Icon" style="width: 70px; height: 70px; margin-bottom: -3px; border: none;">
+    <h1 style="font-weight: bold; color: rgb(34, 23, 23);">Skills</h1>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+        <!-- Skill Item Coding-->
+        <div class="skill-item" style="width: 200px; background-color: rgba(156, 136, 99, 0.8); border-radius: 10px; border: 2px solid #dfdada; text-align: center;">
+            <h3 style="font-weight: bold; color: rgb(34, 23, 23); margin-bottom: 10px;">Coding</h3>
+            <p style="color: rgb(37, 24, 24); font-weight: bold; text-align: center;">
+                HTML<br><br>CSS<br><br>Beginner JavaScript<br>-------------<br>I wanna become a front end developer when I'm older<br>
+            </p>
+            
+        </div>
+        <!-- Skill Item Art-->
+        <div class="skill-item" style="width: 200px; background-color: rgba(156, 136, 99, 0.8); border-radius: 10px; border: 2px solid #dfdada; text-align: center;">
+            <h3 style="font-weight: bold; color: rgb(34, 23, 23); margin-bottom: 10px;">Art</h3>
+            <p style="color: rgb(37, 24, 24); font-weight: bold; text-align: center;">Digital Art<br><br>Traditional Art<br><br>Animation<br>-------------<br>Art is my main hobby(skill)</p>
+        </div>
+        <!-- Skill Item Writing-->
+        <div class="skill-item" style="width: 200px; background-color: rgba(156, 136, 99, 0.8); border-radius: 10px; border: 2px solid #dfdada; text-align: center;">
+            <h3 style="font-weight: bold; color: rgb(34, 23, 23); margin-bottom: 10px;">Writing</h3>
+            <p style="color: rgb(37, 24, 24); font-weight: bold; text-align: center;">Creative Writing<br><br>Poetry<br><br>Screen Writing<br>-------------<br>Writing is a side hobby(skill) of mine</p>
+        </div>
+        <!-- Skill Item Music-->
+        <div class="skill-item" style="width: 200px; background-color: rgba(156, 136, 99, 0.8); border-radius: 10px; border: 2px solid #dfdada; text-align: center;">
+            <h3 style="font-weight: bold; color: rgb(34, 23, 23); margin-bottom: 10px; text-align: center;">Music</h3>
+            <p style="color: rgb(37, 24, 24); font-weight: bold;">Choir Singing (Soprano, Alto)<br><br>Guitar<br><br>Karaoke<br>-------------<br></p>
+        </div>
+        <!-- Skill Item Theatre-->
+        <div class="skill-item" style="width: 200px; background-color: rgba(156, 136, 99, 0.8); border-radius: 10px; border: 2px solid #dfdada; text-align: center;">
+            <h3 style="font-weight: bold; color: rgb(34, 23, 23); margin-bottom: 10px; text-align: center;">Theatre</h3>
+            <p style="color: rgb(37, 24, 24); font-weight: bold;">Acting<br><br>Script Writing<br><br>Singing<br>-------------<br></p>
+        </div>
+    </div>
+</section>
