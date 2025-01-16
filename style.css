@@ -1,0 +1,206 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(to bottom, rgb(226, 213, 139), rgb(43, 20, 19)); /* Black gradient at the bottom */
+    position: relative;
+    overflow: show;
+    transform: translateY(-31.5%); /* Moves everything 10% higher up */
+    font-family:Arial, Helvetica, sans-serif
+
+}
+section.home {
+margin-bottom: 30px;
+}
+
+section {
+margin-top: 100px; /* Adds space above the 'about me' section */
+}
+
+
+/* Stars (dots) */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.7;
+    animation: starAnimation 120s linear infinite;
+}
+
+@keyframes starAnimation {
+    0% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100vh);
+        opacity: 0.4;
+    }
+}
+
+/* Center content styles */
+.name {
+    color: rgb(148, 90, 57);
+}
+
+.social-link {
+    margin-right: 15px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #f8f8f8;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.social-link:hover {
+    color: #d39379;
+}
+
+.social-link.instagram:hover {
+    color: #d39379;
+}
+/* Social link hover effect (dilating the icons) */
+.social-link:hover {
+    color: #d39379;
+}
+
+.icon-and-circle {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+/* Circle hover effect (dilating both the icon and the circle) */
+.social-link:hover .icon-and-circle {
+    transform: scale(1.2); /* Dilates both the icon and the circle */
+}
+
+/* Circle styles */
+.circle-github, .circle-instagram {
+width: 50px;
+height: 50px;
+background-color: white;
+border-radius: 50%;
+position: absolute;
+bottom: -7px;
+left: 49.2%;
+transform: translateX(-50%);
+z-index: -1;
+display: flex;
+justify-content: center;  /* Centers the icon horizontally */
+align-items: center;      /* Centers the icon vertically */
+}
+
+.circle-github {
+background-color: #573c31;
+}
+
+.circle-instagram {
+background-color: #573c31;
+}
+
+header {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    position: fixed;
+    z-index: 10;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(184, 179, 179);
+    position: relative;
+}
+
+nav a:hover {
+    color: #f1eded;
+    transition: color 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Ease-in-out with custom timing */
+}
+
+nav a.active {
+    font-weight: bold;
+    color:rgb(194, 129, 92)
+}
+
+.nav-oval-bar {
+    width: 30%;
+    height: 50px;
+    background-color: hsla(0, 52%, 8%, 0.6);
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Initially hide the slider */
+.slider {
+    position: absolute;
+    bottom: -5px;
+    height: 2px;
+    background-color: rgba(43, 5, 5, 0.6);
+    width: 0;
+    transition: width 0.3s, left 0.3s;
+    z-index: -1;
+    visibility: hidden; /* Hide by default */
+}
+
+/* When there's an active link, make the slider visible */
+nav a.active ~ .slider {
+    visibility: visible;
+}
+
+     #header{
+    position: sticky;
+    top: 0;
+     }
+
+section.home {
+    margin-top: 20px;
+}
+
+img {
+    width: 300px;
+    border-radius: 10px;
+    border: 6px solid white; /* Adding white border */
+}
+
+.home, nav {
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-container {
+    position: relative;
+    display: inline-block;
+}
