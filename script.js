@@ -50,14 +50,3 @@ if (activeLink) {
     slider.style.visibility = 'hidden'; // Hide slider if no active link
 }
 
-// Add click event listeners to update the active link and slider
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        // Remove active class from all links
-        navLinks.forEach(nav => nav.classList.remove('active'));
-        // Add active class to the clicked link
-        link.classList.add('active');
-        // Update the slider position for the active link
-        updateSliderPosition(link);
-    });
-});
