@@ -65,7 +65,7 @@
 <!-- About Me Section-->
 <section>
     <img src="id.png" alt="ID Image" style="width: 50px; height: 50px; margin-bottom: -3px; border: none;">
-    <h1 style="font-weight: bold; color: rgb(34, 23, 23);">About Me</h1>
+    <h1 style="font-weight: bold; color: black;">About Me</h1>
     <div style="width: 700px; height: 200px; background-color: rgba(156, 136, 99, 0.8); border-radius: 10px; border: 2px solid #dfdada; position: relative;">
         <!-- Text inside the div taking space -->
         <p style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; padding: 20px; box-sizing: border-box; font-weight: bold; color:rgb(37, 24, 24)">
@@ -120,7 +120,7 @@
 
 <section>
     <img src="gear.png" alt="Skills Icon" style="width: 70px; height: 70px; margin-bottom: -3px; border: none;">
-    <h1 style="font-weight: bold; color: rgb(34, 23, 23);">Skills</h1>
+    <h1 style="font-weight: bold; color: black;">Skills</h1>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
         <!-- Skill Item Coding-->
         <div class="skill-item">
@@ -178,7 +178,7 @@
 <!-- Extracurriculars Section -->
  <section>
 <img src="extracurriculars.png" alt="Extracurricular Icon" style="width: 70px; height: 70px; margin-bottom: -3px; border: none;">
-<h1 style="font-weight: bold; color: rgb(34, 23, 23);">Extracurriculars</h1>
+<h1 style="font-weight: bold; color: black;">Extracurriculars</h1>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;"></div>
 
 
@@ -187,11 +187,72 @@
 <!-- Achievements Section-->
  <section>
     <img src="achievements.png" alt="Achievements Icon" style="width: 50px; height: 70px; margin-bottom: -3px; border: none;">
-    <h1 style="font-weight: bold; color: rgb(34, 23, 23);">Achievements</h1>
+    <h1 style="font-weight: bold; color: black;">Achievements</h1>
  </section>
 
- <!--Contacts-->
- <section>
-    <img src="contact.png" alt="Contacts icon" style="width: 70px; height: 70px; margin-bottom: -3px; border: none;">
-    <h1 style="font-weight: bold; color: rgb(34, 23, 23);">Contact Me</h1>
- </section>
+<!-- Contacts Section -->
+<section style="display: flex; justify-content: space-between; align-items: flex-start; padding: 20px;">
+    <!-- Left Side: Image -->
+    <div style="flex: 1; max-width: 50%; padding-right: 10px;">
+        <!-- Image Navigation Arrows -->
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px;">
+            <!-- Up Arrow -->
+            <button onclick="changeImage('up')" style="background: none; border: none; cursor: pointer; font-size: 24px; color: #fff;">↑</button>
+            <!-- Down Arrow -->
+            <button onclick="changeImage('down')" style="background: none; border: none; cursor: pointer; font-size: 24px; color: #fff;">↓</button>
+        </div>
+        
+        <!-- Main Image -->
+        <img id="main-image" src="joll.png" alt="my art" style="width: 80%; height: auto; margin-bottom: 10px; border: none; max-width: 100%; max-height: 400px;">
+
+
+    </div>
+
+    <!-- Right Side: Contact Form -->
+    <div style="flex: 1; max-width: 40%; padding-left: 10px; margin-left: 0; margin-right: 100px; color: rgba(156, 136, 99, 0.8);">
+        <h1 style="font-weight: bold; color: rgba(156, 136, 99, 0.8); margin-bottom: 10px;">Contact Me</h1>
+        <p style="color: #ddd; margin-bottom: 15px; color: rgba(156, 136, 99, 0.8); font-weight: bold; margin-left: 0;">
+            I’d love to hear from you! Share your thoughts or questions by filling out the form below with your name, email, and a quick message. If you need to write more, expand the message box.
+        </p>
+        <form action="https://formspree.io/f/mblledwq" method="POST" style="max-width: 100%;">
+            <div style="margin-bottom: 15px;">
+                <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px; text-align: left">name</label>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgb(34, 23, 23); height: 40px; text-align: left; background-color: #664338">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="email" style="display: block; font-weight: bold; margin-bottom: 5px; text-align: left">email</label>
+                <input type="email" id="email" name="_replyto" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgb(34, 23, 23); height: 40px; text-align: left; background-color: #664338">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="message" style="display: block; font-weight: bold; margin-bottom: 5px; text-align: left">message</label>
+                <textarea id="message" name="message" required rows="5" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgb(34, 23, 23); background-color: #664338"></textarea>
+            </div>
+            <button type="submit" 
+                style="width: 100%; background-color: rgb(133, 69, 69); color: rgb(34, 23, 23); padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: background-color 0.5s cubic-bezier(0.25, 1, 0.5, 1), color 0.5s cubic-bezier(0.25, 1, 0.5, 1);"
+                onmouseover="this.style.backgroundColor='rgb(170, 85, 85)'; this.style.color='white'"
+                onmouseout="this.style.backgroundColor='rgb(133, 69, 69)'; this.style.color='rgb(34, 23, 23)';">
+                Submit
+            </button>
+        </form>
+    </div>
+</section>
+
+<script>
+    function changeImage(direction) {
+        var image = document.getElementById("main-image");
+        // Switch between images based on the direction of the arrow click
+        if (direction === "up") {
+            if (image.src.includes("joll.png")) {
+                image.src = "mystige.png";  // Replace with new image
+            } else if (image.src.includes("mystige.png")) {
+                image.src = "running1s.png";  // Replace with a third image
+            }
+        } else if (direction === "down") {
+            if (image.src.includes("running1s.png")) {
+                image.src = "mystige.png";  // Revert to previous image
+            } else if (image.src.includes("mystige.png")) {
+                image.src = "joll.png";  // Revert to original image
+            }
+        }
+    }
+</script>

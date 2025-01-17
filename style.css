@@ -2,17 +2,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300vh;
+    height: 350vh;
     margin: 0;
     flex-direction: column;
     text-align: center;
-    background: linear-gradient(to bottom, rgb(226, 213, 139), rgb(43, 20, 19)); /* Black gradient at the bottom */
+    background: linear-gradient(to bottom, rgb(226, 213, 139) 0%, rgb(43, 20, 19) 50%, rgb(43, 20, 19) 100%); /* Darker color in the middle */
     position: relative;
     overflow: show;
-    transform: translateY(-13%); /* Moves everything 10% higher up */
-    font-family:Arial, Helvetica, sans-serif
-
+    transform: translateY(-5%); /* Moves everything 4% higher up */
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 section.home {
 margin-bottom: 30px;
 }
