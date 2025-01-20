@@ -25,10 +25,11 @@ function createStar() {
     starsContainer.appendChild(star);
 }
 
-// Create 100 stars
-for (let i = 0; i < 100; i++) {
+// Create 200 stars for a fuller effect
+for (let i = 0; i < 200; i++) {
     createStar();
 }
+
 
 // --- SLIDER FUNCTIONALITY --- //
 const navLinks = document.querySelectorAll('nav a');
