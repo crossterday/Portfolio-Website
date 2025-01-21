@@ -7,34 +7,26 @@
     <link rel="icon" href="Chococat.webp" type="image/webp">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-     
 </head>
 <body>    
-</body>
-</html>
-
-    
     <!-- Stars background -->
     <div class="stars"></div>
-
-    <!-- Header and Navigation -->
-    <header>
-        <nav>
-            <a href="#" class="active">home</a>
-            <a href="#">about me</a>
-            <a href="#">skills</a>
-            <a href="#">extracurriculars</a>
-            <a href="#">achievements</a>
-            <a href="#">contacts</a>
-        </nav>
-        <div class="slider"></div>
-        <div class="nav-oval-bar"></div>
-    </header>
     
-
+    <!-- Header and Navigation -->
+    <header">
+        <nav>
+            <a href="#home" class="nav-link active">home</a>
+            <a href="#about" class="nav-link">about me</a>
+            <a href="#skills" class="nav-link">skills</a>
+            <a href="#extracurriculars" class="nav-link">extracurriculars</a>
+            <a href="#achievements" class="nav-link">achievements</a>
+            <a href="#contacts" class="nav-link">contacts</a>
+            <div class="slider"></div>
+        </nav>
+    </header>
 
     <!-- Main Content -->
-    <section class="home">
+    <section id="home" class="home">
         <div>
             <img src="main.jpg" alt="A picture of me" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; border: 2px solid #dfdada;">
             <h2><span style="color: #803342;">Hi, I'm</span> <span class="name">Quynh-Vy Trinh Vu</span>.</h2>
@@ -63,7 +55,7 @@
     </section>
 
 <!-- About Me Section-->
-<section>
+<section id="about">
     <img src="id - Copy.png" alt="ID Image" style="width: 50px; height: 50px; margin-bottom: -3px; border: none;">
     <h1 style="font-weight: bold; color: #441b24;">About Me</h1>
     <div style="width: 700px; height: 200px; background-color: #F39E60; border-radius: 10px; border: 2px solid #dfdada; position: relative;">
@@ -76,87 +68,38 @@
     </div>
 </section>
 
-<!-- Skills Section -->
-<style>
-    /* Apply transition effect on container */
-    .skill-item {
-        position: relative;
-        overflow: hidden; /* Prevents any overflow from the scale effect */
-        transition: transform 0.2s ease-in-out; /* Smooth transition */
-        opacity: 0; /* Start with hidden items */
-        transform: translateX(-30px); /* Start off the screen */
-        transition: all 0.8s ease-in-out;
-    }
-
-    /* Prevent the text from being affected */
-    .skill-item h3, .skill-item p {
-        position: relative; /* Ensures the text stays on top of the container */
-        z-index: 1; /* Keep text above the scaled background */
-        transition: color 0.3s ease-out; /* Smooth color transition */
-    }
-
-    /* Add animation class */
-    .animate {
-        opacity: 1;
-        transform: translateX(0); /* End at original position */
-    }
-
-    /* Fix height and padding */
-    .skill-item {
-        width: 200px;
-        height: 300px;
-        padding: 10px;
-        background-color: #F39E60;
-        border-radius: 10px;
-        border: 2px solid #dfdada;
-        text-align: center;
-        transition: background-color 0.3s ease-out; /* Adjusted for faster easing */
-    }
-    
-    /* Hover effect */
-    .skill-item:hover {
-        background-color: #db7046;
-    }
-
-    .skill-item:hover h3, .skill-item:hover p {
-        color: #dfdada; /* Change text color to #dfdada on hover */
-        transition: color 0.3s ease-out; /* Smooth color transition */
-    }
-</style>
-
-
 <!-- Skills Section-->
-<section>
+<section id="skills">
     <img src="gear.png" alt="Skills Icon" style="width: 70px; height: 70px; margin-bottom: -3px; border: none;">
     <h1 style="font-weight: bold; color: #441b24;">Skills</h1>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
         <!-- Skill Item Coding-->
         <div class="skill-item">
-            <h3 style="font-weight: bold; color: #914043; margin-bottom: 10px;">Coding</h3>
-            <p style="color: #803342; font-weight: bold; text-align: center;">
+            <h3>Coding</h3>
+            <p>
                 HTML<br><br>CSS<br><br>Beginner JavaScript<br>-------------<br>I wanna become a front end developer when I'm older<br>
             </p>
         </div>
         <!-- Skill Item Art-->
         <div class="skill-item">
-            <h3 style="font-weight: bold; color: #914043; margin-bottom: 10px;">Art</h3>
-            <p style="color: #803342; font-weight: bold; text-align: center;">Digital Art<br><br>Traditional Art<br><br>Animation<br>-------------<br>Art is my main hobby(skill)</p>
+            <h3>Art</h3>
+            <p>Digital Art<br><br>Traditional Art<br><br>Animation<br>-------------<br>Art is my main hobby(skill)</p>
         </div>
         <!-- Skill Item Writing-->
         <div class="skill-item">
-            <h3 style="font-weight: bold; color: #914043; margin-bottom: 10px;">Writing</h3>
-            <p style="color: #803342; font-weight: bold; text-align: center;">Creative Writing<br><br>Poetry<br><br>Screen Writing<br>-------------<br>Writing is a side hobby(skill) of mine</p>
+            <h3>Writing</h3>
+            <p>Creative Writing<br><br>Poetry<br><br>Screen Writing<br>-------------<br>Writing is a side hobby(skill) of mine</p>
         </div>
         <!-- Skill Item Music-->
         <div class="skill-item">
-            <h3 style="font-weight: bold; color: #914043; margin-bottom: 10px; text-align: center;">Music</h3>
-            <p style="color: #803342; font-weight: bold;">Choir Singing (Soprano, Alto)<br><br>Guitar<br><br>Karaoke<br>-------------<br></p>
+            <h3>Music</h3>
+            <p>Choir Singing (Soprano, Alto)<br><br>Guitar<br><br>Karaoke<br>-------------<br></p>
         </div>
         <!-- Skill Item Theatre-->
         <div class="skill-item">
-            <h3 style="font-weight: bold; color: #914043; margin-bottom: 10px; text-align: center;">Theatre</h3>
-            <p style="color: #803342; font-weight: bold;">Acting<br><br>Script Writing<br><br>Singing<br>-------------<br></p>
-        </div>
+            <h3>Theatre</h3>
+            <p>Acting<br><br>Script Writing<br><br>Singing<br>-------------<br></p>
+        
     </div>
 </section>
 
@@ -182,7 +125,7 @@
 
 
 <!-- Extracurriculars Section -->
-<section>
+<section id="extracurriculars">
     <img src="extracurriculars.png" alt="Extracurricular Icon" style="width: 70px; height: 70px; margin-bottom: -3px; border: none;">
     <h1 style="font-weight: bold; color: #441b24;">Extracurriculars</h1>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
@@ -275,57 +218,11 @@
         Made the school wrestling team, competing in the lightweight class.
     </p>
 </div>
-
-
-
 </section>
-
-<!-- CSS for extracurricular items -->
-<style>
-.extracurricular-item {
-    background-color: #F39E60;
-    border: 2px solid #dfdada;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.5s ease; /* Added transition for text color */
-}
-
-.extracurricular-item h3 {
-    font-weight: bold;
-    color: #914043;
-    margin-bottom: 10px;
-    transition: color 0.5s ease; /* Smooth color transition */
-}
-
-.extracurricular-item p {
-    color: #803342;
-    font-weight: bold;
-    transition: color 0.5s ease; /* Smooth color transition */
-}
-
-/* Hover effect */
-.extracurricular-item:hover {
-    background-color: #db7046; /* Background color on hover */
-    color: #dfdada; /* Text color on hover */
-}
-
-.extracurricular-item:hover h3 {
-    color: #dfdada; /* Ensure header text also changes color */
-}
-
-.extracurricular-item:hover p {
-    color: #dfdada; /* Ensure paragraph text also changes color */
-}
-
-
-</style>
-
 
 </section>
 <!-- Achievements Section -->
-<section>
+<section id="achievements">
     <img src="trophy.png" alt="Achievements Icon" style="width: 70px; height: 70px; margin-bottom: -3px; border: none;">
     <h1 style="font-weight: bold; color: #441b24;">Achievements</h1>
 
@@ -387,90 +284,8 @@
               
 </section>
 
-<!-- css for achievement cards -->
-<style>
-/* Achievement Card Styles */
-.achievement-card {
-    background-color: #F39E60;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    height: 400px;
-    text-align: center;
-    border: 2px solid #dfdada;
-    position: relative;
-    transition: background-color 0.5s ease-out; /* Smooth transition for background color */
-}
-
-/* Hover effect for the card */
-.achievement-card:hover {
-    background-color: #db7046;
-}
-
-/* Hover effect for the card's text (targeting h2 and p inside the card) */
-.achievement-card:hover h2,
-.achievement-card:hover p {
-    color: #dfdada !important; /* Force the color change to light gray */
-    transition: color 0.5s ease; /* Smooth transition for text color change */
-}
-
-/* Image expansion effect on hover */
-.achievement-card:hover img {
-    transform: scale(1.1); /* Scale image to 110% of its size */
-    transition: transform 0.5s ease; /* Smooth transition for scaling */
-}
-
-/* Ensure images have a smooth transition by default */
-.achievement-card img {
-    transition: transform 0.5s ease; /* Smooth transition for non-hover state */
-}
-
-/* Default text color for h2 and p */
-.achievement-card h2,
-.achievement-card p {
-    color: #914043; /* Default color for text */
-}
-
-
-    </style>
-    
-
-<!--
-<script>
-    // Function to check if an element is in the viewport
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    // Function to add the show-card class when the element is in the viewport
-    function checkCards() {
-        const cards = document.querySelectorAll('.achievement-card'); // Select all achievement cards
-        cards.forEach(card => {
-            if (isElementInViewport(card)) {
-                card.classList.add('show-card'); // Add the class to trigger the animation
-            }
-        });
-    }
-
-    // Call the function when the page is loaded and when the user scrolls
-    window.addEventListener('scroll', checkCards);
-    window.addEventListener('load', checkCards); // Also check when the page loads
-</script>-->
-
-</section>
-
-
- </section>
-
 <!-- Contacts Section -->
-<section style="display: flex; justify-content: space-between; align-items: flex-start; padding: 20px;">
+<section id="contacts" style="display: flex; justify-content: space-between; align-items: flex-start; padding: 20px;">
     <!-- Left Side: Image -->
     <div style="flex: 1; max-width: 50%; padding-right: 10px;">
         <!-- Image Navigation Arrows -->
@@ -516,4 +331,6 @@
         </form>
     </div>
 </section>
-
+<script src="script.js"></script>
+</body>
+</html>

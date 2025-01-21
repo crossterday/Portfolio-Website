@@ -30,24 +30,72 @@ for (let i = 0; i < 200; i++) {
     createStar();
 }
 
-
-// --- SLIDER FUNCTIONALITY --- //
-const navLinks = document.querySelectorAll('nav a');
-const slider = document.querySelector('.slider');
-
-// Function to update the slider position for the active link
-function updateSliderPosition(link) {
-    const rect = link.getBoundingClientRect();
-    slider.style.width = `${rect.width}px`;
-    slider.style.left = `${rect.left}px`;
-    slider.style.visibility = 'visible'; // Show the slider when updating position
-}
-
-// Set initial slider position based on active link
-const activeLink = document.querySelector('nav a.active');
-if (activeLink) {
-    updateSliderPosition(activeLink);
-} else {
-    slider.style.visibility = 'hidden'; // Hide slider if no active link
-}
-
+// Active link functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    const slider = document.querySelector('.slider');
+    
+    // Function to update slider position and width
+    function updateSlider(activeLink) {
+        if (!activeLink) return;
+        
+        const linkRect = activeLink.getBoundingClientRect();
+        const navRect = activeLink.parentElement.getBoundingClientRect();
+        
+        slider.style.width = `${linkRect.width}px`;
+        slider.style.left = `${linkRect.left - navRect.left}px`;
+    }
+    
+    // Function to update active link based on scroll position
+    function updateActiveLink() {
+        const fromTop = window.scrollY;
+        
+        navLinks.forEach(link => {
+            const section = document.querySelector(link.hash);
+            
+            if (
+                section.offsetTop <= fromTop + 150 &&
+                section.offsetTop + section.offsetHeight > fromTop + 150
+            ) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                link.classList.add('active');
+                updateSlider(link);
+            }
+        });
+    }
+    
+    // Update active link on scroll
+    window.addEventListener('scroll', updateActiveLink);
+    
+    // Update active link when clicking on nav links
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            window.scrollTo({
+                top: targetSection.offsetTop - 100,
+                behavior: 'smooth'
+            });
+            
+            navLinks.forEach(link => link.classList.remove('active'));
+            this.classList.add('active');
+            updateSlider(this);
+        });
+    });
+    
+    // Initial update of slider position
+    const initialActiveLink = document.querySelector('.nav-link.active');
+    if (initialActiveLink) {
+        updateSlider(initialActiveLink);
+    }
+    
+    // Update slider position on window resize
+    window.addEventListener('resize', () => {
+        const activeLink = document.querySelector('.nav-link.active');
+        updateSlider(activeLink);
+    });
+});
